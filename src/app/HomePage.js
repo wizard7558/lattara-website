@@ -16,7 +16,7 @@ const HomePage = () => {
 
   const expertise = [
     {
-      title: 'Analytics Engineering',
+      title: 'Data Engineering',
       description: 'Build robust data pipelines and reporting systems that deliver accurate, actionable insights.',
       details: [
         'Data warehouse architecture',
