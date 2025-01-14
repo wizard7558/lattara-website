@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
+  <!-- Block pattern logo - adjusted scale and position -->
+  <g transform="translate(40, 60) scale(3.5)">
+    <!-- Row 1 -->
+    <rect x="0" y="0" width="8" height="8" fill="#1e3a8a" />
+    <rect x="10" y="0" width="8" height="8" fill="#1e3a8a" />
+    <rect x="20" y="0" width="8" height="8" fill="#1e3a8a" />
+    
+    <!-- Row 2 -->
+    <rect x="5" y="10" width="8" height="8" fill="#1e3a8a" />
+    <rect x="15" y="10" width="8" height="8" fill="#1e3a8a" />
+    
+    <!-- Row 3 -->
+    <rect x="0" y="20" width="8" height="8" fill="#1e3a8a" />
+    <rect x="10" y="20" width="8" height="8" fill="#1e3a8a" />
+    <rect x="20" y="20" width="8" height="8" fill="#1e3a8a" />
+  </g>
+  
+  <!-- Company Name - adjusted position and size -->
+  <text x="170" y="115" 
+        dominant-baseline="middle"
+        font-family="Arial, sans-serif" 
+        font-size="80" 
+        font-weight="700" 
+        fill="#1e3a8a">
+    LATTARA
+  </text>
+</svg>

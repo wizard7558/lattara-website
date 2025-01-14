@@ -2,22 +2,25 @@
   "name": "lattara-website",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.4"
+    "lucide-react": "^0.x.x",
+    "next": "13.2.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "tailwindcss": "^3.x.x"
   },
   "devDependencies": {
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.4",
-    "@eslint/eslintrc": "^3"
+    "@babel/plugin-proposal-private-property-in-object": "^7.20.7",
+    "autoprefixer": "^10.4.13",
+    "eslint": "8.35.0",
+    "eslint-config-next": "13.2.4",
+    "postcss": "^8.4.21"
   }
 }

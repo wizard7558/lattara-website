@@ -2,20 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom animation for scrolling logos */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.scroll-container {
+  display: flex;
+  overflow: hidden; /* Prevent content from spilling out */
+  white-space: nowrap;
+  position: relative; /* Important for child positioning */
+}
+
+.scroll-container-inner {
+  display: flex;
+  animation: scroll 30s linear infinite; /* Adjust duration for speed */
+}
+
+.scroll-container-inner > * {
+  flex-shrink: 0; /* Prevent items from shrinking */
+  margin-right: 30px; /* Optional spacing between logos */
 }
