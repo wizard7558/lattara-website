@@ -1,11 +1,10 @@
-Copy/** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,ts,jsx,tsx,mdx}", // Add src if you use it
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./layouts/**/*.{js,ts,jsx,tsx,mdx}"  // Add layouts if you use them
   ],
   theme: {
     extend: {
@@ -17,10 +16,10 @@ module.exports = {
         }
       },
       animation: {
-        'scroll': 'scrollAnimation 20s linear infinite'
+        'scroll': 'scroll 30s linear infinite'
       },
       keyframes: {
-        scrollAnimation: {
+        scroll: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' }
         }
