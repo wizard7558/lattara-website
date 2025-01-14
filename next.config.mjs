@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  output: 'export',
+  images: {
+    unoptimized: true,
+  },
+  // Since you're using API placeholders in your code
+  assetPrefix: '/',
+}
 
-export default nextConfig;
+module.exports = nextConfig
