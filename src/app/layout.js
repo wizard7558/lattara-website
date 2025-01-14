@@ -10,7 +10,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
+      <head>
+        {/* Add this to ensure CSS is loaded */}
+        <link rel="stylesheet" href="/_next/static/css/app.css" />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   )
