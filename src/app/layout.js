@@ -6,6 +6,9 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Lattara - Marketing Analytics & CRM Consulting',
   description: 'Expert marketing analytics and CRM consulting services',
+  icons: {
+    icon: '/images/icon.svg', // This points to your app/icon.svg
+  },
 }
 
 export default function RootLayout({ children }) {
