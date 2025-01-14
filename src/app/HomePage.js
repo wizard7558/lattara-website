@@ -2,9 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import { Users, ArrowRight, ChevronRight, Code, LineChart, Check } from 'lucide-react';
+import ScheduleButton from '@/components/ScheduleButton';
 
 const HomePage = () => {
   const [scrolled, setScrolled] = useState(false);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -97,25 +99,25 @@ const HomePage = () => {
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-20 items-center">
-            {/* SVG Logo */}
-              <div className="flex items-center">
-                <a href="/" className="flex items-center">
-                  <img
-                    src="/images/logo.svg" // Replace with your SVG path
-                    alt="Lattara Logo"
-                    className="h-20 w-auto"
-                  />
-                  <span className="sr-only">Lattara</span>
-                </a>
-              </div>
+            <div className="flex items-center">
+              <a href="/" className="flex items-center">
+                <img
+                  src="/images/logo.svg"
+                  alt="Lattara Logo"
+                  className="h-20 w-auto"
+                />
+                <span className="sr-only">Lattara</span>
+              </a>
+            </div>
             <div className="hidden md:flex items-center space-x-8">
               <a href="#expertise" className="text-gray-600 hover:text-blue-900 transition">Expertise</a>
               <a href="#case-studies" className="text-gray-600 hover:text-blue-900 transition">Case Studies</a>
               <a href="#approach" className="text-gray-600 hover:text-blue-900 transition">Approach</a>
               <a href="#contact" className="text-gray-600 hover:text-blue-900 transition">Contact</a>
-              <button className="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition flex items-center gap-2">
+              {/* Updated Let's Talk button */}
+              <ScheduleButton className="bg-blue-900 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition flex items-center gap-2">
                 Let's Talk <ArrowRight size={16} />
-              </button>
+              </ScheduleButton>
             </div>
           </div>
         </div>
@@ -133,9 +135,10 @@ const HomePage = () => {
               and drive growth through tailored analytics and CRM solutions.
             </p>
             <div className="flex gap-4 justify-center">
-              <button className="bg-blue-900 text-white px-8 py-4 rounded-lg hover:bg-blue-800 transition flex items-center gap-2">
+              {/* Updated Schedule a Consultation button */}
+              <ScheduleButton className="bg-blue-900 text-white px-8 py-4 rounded-lg hover:bg-blue-800 transition flex items-center gap-2">
                 Schedule a Consultation <ChevronRight size={20} />
-              </button>
+              </ScheduleButton>
               <button className="border-2 border-blue-900 text-blue-900 px-8 py-4 rounded-lg hover:bg-blue-50 transition">
                 View Case Studies
               </button>
@@ -260,9 +263,10 @@ const HomePage = () => {
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Let's discuss how I can help optimize your marketing analytics and CRM strategies.
           </p>
-          <button className="bg-white text-blue-900 px-8 py-4 rounded-lg hover:bg-blue-50 transition font-medium">
+          {/* Updated Schedule a Consultation button */}
+          <ScheduleButton className="bg-white text-blue-900 px-8 py-4 rounded-lg hover:bg-blue-50 transition font-medium">
             Schedule a Consultation
-          </button>
+          </ScheduleButton>
         </div>
       </section>
     </div>
