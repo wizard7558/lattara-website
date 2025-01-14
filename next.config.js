@@ -3,6 +3,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+
+  experimental: {
+    webpackBuildWorker: true,
   // Remove output: 'export' if you have it
   // Add this to ensure proper CSS processing
   webpack: (config) => {
