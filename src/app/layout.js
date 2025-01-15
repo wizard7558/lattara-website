@@ -9,7 +9,9 @@ export const metadata = {
   title: 'Lattara - Marketing Analytics & CRM Consulting',
   description: 'Expert marketing analytics and CRM consulting services',
   icons: {
-    icon: '/images/icon.svg',
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
   },
 }
 
