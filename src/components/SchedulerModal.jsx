@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { Calendar, Loader, X } from 'lucide-react';
-import { useModal } from '../providers/ModalProvider';
+import { useModal } from '@/providers/ModalProvider';
 
 const SchedulerModal = () => {
   const { showModal, setShowModal } = useModal();
@@ -20,6 +20,8 @@ const SchedulerModal = () => {
     utm_content: '',
     utm_term: ''
   });
+
+  const CALENDLY_URL = 'https://calendly.com/rileysorenson/30min'; // Replace with your Calendly URL
 
   useEffect(() => {
     if (showModal) {
@@ -47,6 +49,20 @@ const SchedulerModal = () => {
       document.body.style.overflow = 'unset';
     };
   }, [showModal]);
+
+  useEffect(() => {
+    if (step === 'calendar') {
+      // Load Calendly widget script
+      const script = document.createElement('script');
+      script.src = 'https://assets.calendly.com/assets/external/widget.js';
+      script.async = true;
+      document.body.appendChild(script);
+      
+      return () => {
+        document.body.removeChild(script);
+      };
+    }
+  }, [step]);
 
   const handleClose = () => {
     setShowModal(false);
@@ -140,18 +156,24 @@ const SchedulerModal = () => {
     await submitToHubSpot();
   };
 
-  useEffect(() => {
-    if (step === 'calendar') {
-      const script = document.createElement('script');
-      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/leadflows/2.12.0/Msgs.min.js';
-      script.async = true;
-      document.body.appendChild(script);
-      
-      return () => {
-        document.body.removeChild(script);
-      };
-    }
-  }, [step]);
+  // Create Calendly URL with prefill parameters
+  const getCalendlyUrl = () => {
+    const baseUrl = CALENDLY_URL;
+    const prefill = {
+      name: `${formData.firstName} ${formData.lastName}`,
+      email: formData.email,
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      organization: formData.company
+    };
+    
+    const params = new URLSearchParams();
+    Object.entries(prefill).forEach(([key, value]) => {
+      params.append(`prefill[${key}]`, value);
+    });
+    
+    return `${baseUrl}?${params.toString()}`;
+  };
 
   if (!showModal) return null;
 
@@ -256,11 +278,7 @@ const SchedulerModal = () => {
                 </button>
               </form>
             ) : (
-              <div className="meetings-iframe-container min-h-[600px]" data-src="https://meetings.hubspot.com/riley122/lattara-consultation?uuid=49911fa6-79e1-48f0-8de7-644399f7761f">
-                <div className="h-96 flex items-center justify-center">
-                  <div className="animate-pulse text-gray-500">Loading calendar...</div>
-                </div>
-              </div>
+              <div className="calendly-inline-widget" data-url={getCalendlyUrl()} style={{ minWidth: '320px', height: '700px' }} />
             )}
           </div>
         </div>

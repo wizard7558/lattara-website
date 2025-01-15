@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { ModalProvider } from '../providers/ModalProvider'
-import SchedulerModal from '../components/SchedulerModal'
+import { ModalProvider } from '@/providers/ModalProvider'
+import SchedulerModal from '@/components/SchedulerModal'
 
 const inter = Inter({ subsets: ['latin'] })
 

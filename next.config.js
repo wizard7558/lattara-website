@@ -6,6 +6,7 @@ const nextConfig = {
   // Add the experimental flag to enable the build worker
   experimental: {
     webpackBuildWorker: true,
+    appDir: true
   },
   // Simplified webpack config
   webpack: (config) => {
